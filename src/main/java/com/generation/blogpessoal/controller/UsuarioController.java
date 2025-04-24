@@ -27,17 +27,17 @@ import jakarta.validation.Valid;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 
-	@Autowired
-	private UsuarioService usuarioService;
-
+	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	@GetMapping("/all")
 	public ResponseEntity <List<Usuario>> getAll(){
 		
-		return ResponseEntity.ok(usuarioRepository.findAll());
-		
+		return ResponseEntity.ok(usuarioRepository.findAll());	
 	}
 
 	@GetMapping("/{id}")
